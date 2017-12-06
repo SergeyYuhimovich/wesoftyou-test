@@ -3,13 +3,9 @@ import Slider, { createSliderWithTooltip } from 'rc-slider';
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-class Filter extends Component {
-    _onValueChange = (value) => {
-        this.props.onChange(value);
-    };
-
+export default class Filter extends Component {
     render() {
-        const { title, min, max } = this.props;
+        const { title, min, max, onChange } = this.props;
 
         return (
             <div className="filter">
@@ -19,11 +15,9 @@ class Filter extends Component {
                     tipProps={{ overlayClassName: 'foo' }}
                     min={min}
                     max={max}
-                    onChange={this._onValueChange}
+                    onChange={(value) => onChange(value)}
                 />
             </div>
         )
     }
 }
-
-export default Filter;

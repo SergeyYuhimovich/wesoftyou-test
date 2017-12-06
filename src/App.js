@@ -29,7 +29,7 @@ class App extends Component {
                             image={card.data.thumbnail}
                             title={card.data.title}
                             comments={card.data.num_comments}
-                            link={card.data.permalink}
+                            link={'https://www.reddit.com/' + card.data.permalink}
                         />
                     </li>
                     : ''
@@ -46,7 +46,7 @@ class App extends Component {
                     <Filter title="Top commented"
                             min={0}
                             max={maxComments}
-                            onChange={filterByComments}
+                            onChange={this.props.filterByComments}
                     />
 
                     <Masonry elementType={'ul'}

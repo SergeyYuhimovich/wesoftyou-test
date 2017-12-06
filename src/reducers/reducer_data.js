@@ -21,7 +21,6 @@ export default function(state = INITIAL_STATE, action) {
             };
 
         case FILTER_BY_COMMENTS:
-            console.log(action.commentsQty);
             return { ...state, minCommentsQty: action.commentsQty};
 
         default:
